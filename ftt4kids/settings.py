@@ -54,7 +54,9 @@ ROOT_URLCONF = 'ftt4kids.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'build')
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -113,6 +115,9 @@ USE_L10N = True
 
 USE_TZ = True
 
+STATICFILES_DIRS = [
+  os.path.join(BASE_DIR, 'build/static'),
+]
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
